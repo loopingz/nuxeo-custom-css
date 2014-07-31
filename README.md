@@ -1,9 +1,9 @@
 nuxeo-custom-css
 ================
 
-Allow to define custom CSS per workspace
+Allow to define custom CSS per superspace
 
-The interface will be using this CSS for every document inside the workspacem, you can define this CSS in the local configuration tab.
+The interface will be using this CSS for every document inside the superspace, you can define this CSS in the local configuration tab.
 
 You'll then be able to change the logo, change the basic color by overriding some style.
 
