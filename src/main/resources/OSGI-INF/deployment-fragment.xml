@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<fragment version="1"> 
+  <extension target="application#MODULE"> 
+    <module> 
+      <java>${bundle.fileName}</java> 
+    </module> 
+  </extension>  
+  <require>all</require>
+  <install>
+    <delete path="${bundle.fileName}.tmp"/>
+    <unzip from="${bundle.fileName}" to="${bundle.fileName}.tmp"/>
+    <copy from="${bundle.fileName}.tmp/web/nuxeo.war/incl/tabs/custom_css_configuration.xhtml" to="/nuxeo.war/incl/tabs/custom_css_configuration.xhtml"/>
+    <copy from="${bundle.fileName}.tmp/schemas/customCssSuperSpace.xsd" to="/schemas/customCssSuperSpace.xsd"/>
+    <append from="${bundle.fileName}.tmp/web/nuxeo.war/incl/nuxeo_header.xhtml" to="/nuxeo.war/incl/nuxeo_header.xhtml" addNewLine="true" />
+    <append from="${bundle.fileName}.tmp/OSGI-INF/l10n/customcss_messages.properties" to="/nuxeo.war/WEB-INF/classes/messages.properties" addNewLine="true" />
+    <append from="${bundle.fileName}.tmp/OSGI-INF/l10n/customcss_messages.properties" to="/nuxeo.war/WEB-INF/classes/messages_en.properties" addNewLine="true" />
+    <append from="${bundle.fileName}.tmp/OSGI-INF/l10n/customcss_messages_fr.properties" to="/nuxeo.war/WEB-INF/classes/messages_fr.properties" addNewLine="true" />
+    <delete path="${bundle.fileName}.tmp"/>
+  </install>
+</fragment>

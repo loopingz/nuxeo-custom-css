@@ -1,0 +1,8 @@
+<c:if test="#{!empty currentSuperSpace}">
+        <c:if test="#{currentSuperSpace.hasFacet('CustomCss') and (!empty currentSuperSpace.uicss.customCss)}">
+	   <style>
+			/** Styles from SuperSpace custom CSS **/
+            #{currentSuperSpace.uicss.customCss}
+        </style>
+	</c:if>
+</c:if>

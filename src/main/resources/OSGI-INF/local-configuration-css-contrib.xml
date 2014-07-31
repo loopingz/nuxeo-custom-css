@@ -1,0 +1,60 @@
+<component name="org.nuxeo.ecm.localconf.ui.customcss">
+
+  <extension target="org.nuxeo.ecm.platform.actions.ActionService"
+    point="actions">
+
+    <action id="CUSTOM_CSS_CONFIGURATION"
+      link="/incl/tabs/custom_css_configuration.xhtml" order="100"
+      label="action.view.theme" icon="/icons/file.gif">
+      <category>LOCAL_CONFIGURATION</category>
+      <filter-id>manage</filter-id>
+    </action>
+	
+  </extension>
+
+  <extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+    point="widgets">
+
+    <widget name="css_custom_form" type="textarea">
+      <labels>
+        <label mode="any">label.local.configuration.ui.customCss</label>
+      </labels>
+      <translated>true</translated>
+      <fields>
+        <field>uicss:customCss</field>
+      </fields>
+      <properties widgetMode="edit">
+          <property name="cols">70</property>
+          <property name="rows">15</property>
+      </properties>
+    </widget>
+
+
+  </extension>
+
+  <extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+    point="layouts">
+
+    <layout name="css_custom_form">
+      <templates>
+        <template mode="any">
+          /layouts/layout_local_configuration_template.xhtml
+        </template>
+      </templates>
+      <properties mode="any">
+        <property name="layoutTemplateToInclude">/layouts/layout_default_template.xhtml</property>
+        <property name="foldableBoxLabel">label.local.configuration.customCss</property>
+        <property name="localConfigurationFacet">CustomCss</property>
+        <property name="helpLabel">label.local.configuration.customCss.info</property>
+        <property name="elementsToReRender">local_configuration_panel</property>
+      </properties>
+      <rows>
+        <row>
+          <widget>css_custom_form</widget>
+        </row>
+      </rows>
+    </layout>
+
+  </extension>
+
+</component>
